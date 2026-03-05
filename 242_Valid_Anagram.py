@@ -1,10 +1,12 @@
-from typing import List
-
 class Solution:
-    def getConcatenation(self, nums: List[int]) -> List[int]:
-        ans=[]
-        for j in range(2):
-            for i in nums:
-                ans.append(i)
-        return ans
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s)!=len(t):
+            return False
+        Scount, Tcount = {}, {}
+        for i in range(len(s)):
+            Scount[s[i]]= 1 + Scount.get(s[i], 0)
+            Tcount[t[i]]= 1 + Tcount.get(t[i], 0)
+        return Scount == Tcount
+            
+
         
